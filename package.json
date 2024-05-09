@@ -1,0 +1,26 @@
+{
+  "name": "youtube",
+  "version": "1.0.0",
+  "description": "This is a Youtube Clone",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "start tsc --watch && nodemon ./dist/index.js"
+  },
+  "keywords": [
+    "youtube",
+    "express",
+    "node"
+  ],
+  "author": "Mohd Hamza",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.11",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
