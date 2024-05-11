@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/index.js",
-    "dev": "start tsc --watch && nodemon ./dist/index.js"
+    "dev": "start tsc --watch && nodemon -r dotenv/config --experimental-json-modules ./dist/index.js"
   },
   "keywords": [
     "youtube",
@@ -18,7 +18,9 @@
   "dependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^20.12.11",
-    "express": "^4.19.2"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.0",
