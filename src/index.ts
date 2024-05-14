@@ -1,19 +1,48 @@
-import express, { Request, Response } from 'express'
-import connectDB from './db/mongoDB_connection';
-const app = express();
 import dotenv from "dotenv"
-dotenv.config({ path: "./.env" })
+import connectDB from "./db/mongoDB_connection"
+import { app } from "./app"
+
+
+dotenv.config({ path: "./env" })
+export const MONGODB_URI = process.env.MONGODB_URI
+export const port = process.env.PORT || 8000
 
 connectDB()
     .then(() => {
-        app.listen(process.env.PORT, () => {
-            console.log(`App is listening on Port ${process.env.PORT}`)
+        app.on("error", () => {
+            console.log("Express connection Error in index.ts")
+        })
+        app.listen(port, () => {
+            console.log("App is listening on port :", port)
         })
     })
     .catch((err) => {
-        console.log("Error MongoDb Connection Failed index.ts : ", err)
-        process.exit(1)
+        console.log("Error : App is not listening - index.ts")
+        throw err
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
