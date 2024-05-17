@@ -6,6 +6,9 @@ import { app } from "./app"
 dotenv.config({ path: "./env" })
 export const MONGODB_URI = process.env.MONGODB_URI
 export const port = process.env.PORT || 8000
+export const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET
+export const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET
+
 
 connectDB()
     .then(() => {
